@@ -9,18 +9,29 @@ class Main {
     while(indiceProcessoDaFila >= 0) {
 
       indiceProcessoDaFila = getIndiceMaisRecenteDaFilaDeProcessos(processos);
+      System.out.println(indiceProcessoDaFila);
       break;
     }
    
   }
 
   public static int getIndiceMaisRecenteDaFilaDeProcessos(Processo[] processos) {
+    boolean processoExecutando = false;
     for(int i = 0; i < processos.length; i++) {
       if(processos[i].getStatus() == 'P') {
         return i;
       }
+
+      if(processos[i].getStatus() == 'E') {
+        processoExecutando = true;
+      }
     }
-    return -1;
+
+    if (processoExecutando) {
+      return -1;
+    }
+
+    return -2;
   }
 
 }
