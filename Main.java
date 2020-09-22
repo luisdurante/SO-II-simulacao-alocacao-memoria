@@ -2,36 +2,33 @@ class Main {
 
   public static void main(String[] args) {
     Processo[] processos = new Processo[2];
-    int[] memoria = new int[20];
-    processos[0] = new Processo("Firefox", 10, 3);
-    processos[1] = new Processo("Chrome", 15, 6);
-    int indiceProcessoDaFila = 0;
-    while(indiceProcessoDaFila >= 0) {
+    processos[0] = new Processo("Firefox", 2, 3);
+    processos[1] = new Processo("Chrome", 2, 6);
+    int[] memoria = new int[10];
+    preencheMemoria(memoria);
+  
+    memoria[1] = 80;
+    memoria[5] = 80;
+    memoria[8] = 80;
+    memoria[9] = 80;
 
-      indiceProcessoDaFila = getIndiceMaisRecenteDaFilaDeProcessos(processos);
-      System.out.println(indiceProcessoDaFila);
-      break;
-    }
-   
+    Alocador a = new Alocador();
+    a.run(processos, memoria);
+
+    printMem(memoria);
+    
   }
 
-  public static int getIndiceMaisRecenteDaFilaDeProcessos(Processo[] processos) {
-    boolean processoExecutando = false;
-    for(int i = 0; i < processos.length; i++) {
-      if(processos[i].getStatus() == 'P') {
-        return i;
-      }
-
-      if(processos[i].getStatus() == 'E') {
-        processoExecutando = true;
-      }
+  public static void preencheMemoria(int[] memoria){
+    for(int i = 0; i < memoria.length ; i++) {
+      memoria[i] = -1;
     }
-
-    if (processoExecutando) {
-      return -1;
-    }
-
-    return -2;
   }
 
+  public static void printMem(int[] memoria){
+    for (int i = 0; i < memoria.length ; i++) {
+      System.out.println(memoria[i]);
+    }
+  }
+ 
 }
