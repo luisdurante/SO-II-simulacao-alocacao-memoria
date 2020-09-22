@@ -1,13 +1,13 @@
 class Processo {
-  private String nome;
+  private int id;
   private int tamanho;
   private int qtUnidadesDeTempo;
   //P = Parado, E = Executando, F = Finalizado
   private char status = 'P';
   private int enderecoMem;
 
-  public Processo(String nome, int tamanho, int qtUnidadesDeTempo) {
-    this.nome = nome;
+  public Processo(int id, int tamanho, int qtUnidadesDeTempo) {
+    this.id = id;
     this.tamanho = tamanho;
     this.qtUnidadesDeTempo = qtUnidadesDeTempo;
   }
