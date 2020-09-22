@@ -1,9 +1,15 @@
+import java.util.Random;
+
 class Main {
 
   public static void main(String[] args) {
-    Processo[] processos = new Processo[2];
-    processos[0] = new Processo("Firefox", 2, 3);
-    processos[1] = new Processo("Chrome", 2, 6);
+    Random rand = new Random();
+    Processo[] processos = new Processo[200];
+    int i;
+    for (i = 0; i < processos.length; i++ ){
+        processos[i] = new Processo(i, rand.nextInt(100), rand.nextInt(20));
+        
+    }
     int[] memoria = new int[10];
     preencheMemoria(memoria);
     printMem(memoria);
