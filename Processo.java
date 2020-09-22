@@ -14,7 +14,7 @@ class Processo {
 
 
   public void diminuirUnidadeDeTempo(){
-    this.qtUnidadesDeTempo = this.qtUnidadesDeTempo-- > 0 ? this.qtUnidadesDeTempo-- : 0;
+    this.qtUnidadesDeTempo = this.qtUnidadesDeTempo - 1 > 0 ? this.qtUnidadesDeTempo - 1 : 0;
   }
 
   public void executar(int endereco) {
@@ -28,6 +28,10 @@ class Processo {
 
   public void finalizar() {
     this.status = 'F';
+  }
+
+  public int getQtUnidadesDeTempo() {
+    return this.qtUnidadesDeTempo;
   }
 
   public int getEnderecoMem() {
