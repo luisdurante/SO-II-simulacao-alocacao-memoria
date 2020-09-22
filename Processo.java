@@ -30,8 +30,12 @@ class Processo {
     this.status = 'F';
   }
 
-  public int getEnderecoMemX() {
+  public int getEnderecoMem() {
     return this.enderecoMem;
+  }
+
+   public int getTamanho() {
+    return this.tamanho;
   }
 
   public char getStatus() {
