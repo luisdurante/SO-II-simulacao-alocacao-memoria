@@ -6,7 +6,8 @@ class Main {
     processos[1] = new Processo("Chrome", 2, 6);
     int[] memoria = new int[10];
     preencheMemoria(memoria);
-  
+    printMem(memoria);
+    System.out.println("\n\n\n\n");
     memoria[1] = 80;
     memoria[5] = 80;
     memoria[8] = 80;
@@ -14,6 +15,10 @@ class Main {
 
     Alocador a = new Alocador();
     a.run(processos, memoria);
+    printMem(memoria);
+    System.out.println("\n\n\n\n");
+    Monitor m = new Monitor();
+    m.run(processos, memoria);
 
     printMem(memoria);
     
