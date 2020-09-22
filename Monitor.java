@@ -43,7 +43,7 @@ class Monitor {
     int enderecoFinal = processo.getEnderecoMem() + processo.getTamanho();
     int j = 0; 
     for (int i = processo.getEnderecoMem(); j < processo.getTamanho() ; i++) {
-      memoria[i] = 0;
+      memoria[i] = -1;
       j++;
     }
   }
