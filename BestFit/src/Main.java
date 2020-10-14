@@ -2,15 +2,9 @@ import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-// ALOCADOR
-// SEM MEM  = MEDE;
-// qt processos na mem memtotal/espaço ocupado
-// mostrar quando o alocador não consegue aloa
-// 32
-
 class Main {
   public static void main(String[] args) {
-	  // APAGAR constante para ajudar no tempo
+
 	final int NUM_PROC = 200;
 	RegistradorLogger logger = new RegistradorLogger();
 	Processo[] processos = new Processo[NUM_PROC];
@@ -20,7 +14,7 @@ class Main {
     preencheMemoria(memoria);
     Alocador a = new Alocador(processos, memoria, logger); 
     Monitor m = new Monitor(processos, memoria, logger);
-	  //APAGAR - inicia o timer
+
     long startTime = System.currentTimeMillis();
     a.start();
     m.start();
@@ -35,7 +29,7 @@ class Main {
         System.out.println("*                  FIM                   *");
         System.out.println("******************************************");
         logger.gerarLogFinal();
-	    // APAGAR - calcula o tempo 
+
 	System.out.println("Tempo medio de execucao dos processos: " + (endTime - startTime)/NUM_PROC + "ms");
 	
     
